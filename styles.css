@@ -1,0 +1,48 @@
+/* special small screen */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "navbar"
+    "main-doc";
+}
+#navbar {
+  grid-area: navbar;
+  overflow: auto;
+  border: 1px solid black;
+}
+#navbar a {
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 25px;
+}
+#first-link {
+  border-top: 1px solid black;
+}
+#navbar header {
+  padding: 10px;
+}
+#main-doc {
+  grid-area: main-doc;
+}
+/* normal big screen */
+@media (min-width: 790px) {
+  .container {
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "navbar main-doc";
+  }
+  #navbar {
+    border: none;
+    height: 100%;
+    border-right: 3px solid grey;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
